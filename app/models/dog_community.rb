@@ -1,0 +1,2 @@
+class DogCommunity < ApplicationRecord
+end

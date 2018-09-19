@@ -46,6 +46,7 @@ class ParkCommunitiesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def park_community_params
-      params.fetch(:park_community, {})
+      # params.fetch(:park_community, {})
+      params.require(:park_community).permit()
     end
 end

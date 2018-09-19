@@ -46,6 +46,7 @@ class PrivateMessagesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def private_message_params
-      params.fetch(:private_message, {})
+      # params.fetch(:private_message, {})
+      params.require(:private_message).permit(:content, :user_id, :inbox_id)
     end
 end

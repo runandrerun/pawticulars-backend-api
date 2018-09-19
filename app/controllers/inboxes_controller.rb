@@ -46,6 +46,7 @@ class InboxesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def inbox_params
-      params.fetch(:inbox, {})
+      # params.fetch(:inbox, {})
+      params.require(:inbox).permit(:user_id)
     end
 end

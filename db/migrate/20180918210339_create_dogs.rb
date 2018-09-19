@@ -9,7 +9,6 @@ class CreateDogs < ActiveRecord::Migration[5.2]
       t.string :energy
       t.string :gender
       t.integer :age
-      t.weight :weight
 
       t.timestamps
     end

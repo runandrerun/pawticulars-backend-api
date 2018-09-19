@@ -46,6 +46,7 @@ class CommunitiesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def community_params
-      params.fetch(:community, {})
+      # params.fetch(:community, {})
+      params.require(:community).permit(:title, :description)
     end
 end

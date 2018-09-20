@@ -4,6 +4,16 @@ class User < ApplicationRecord
   has_many :user_dogs
   has_many :dogs, through: :user_dogs
 
+  def formatted
+    {
+      id: self.id,
+      username: self.username,
+      avatar: self.avatar,
+      location: self.location,
+      display_name: self.display_name,
+      dogs: self.dogs
+    }
+  end
 
  #  validates :password, :presence => true,
  #                      :confirmation => true,

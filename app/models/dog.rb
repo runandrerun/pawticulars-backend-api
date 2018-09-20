@@ -4,4 +4,27 @@ class Dog < ApplicationRecord
   has_one :user_dog
   has_one :user, through: :user_dog
 
+  def formatted
+    {
+      id: self.id,
+      name: self.name,
+      avatar: self.avatar,
+      breed: self.breed,
+      bio: self.bio,
+      size: self.size,
+      temperament: self.temperament,
+      energy: self.energy,
+      gender: self.gender,
+      age: self.age,
+      owner: self.formatted_owner
+    }
+  end
+
+  def formatted_owner
+    {
+      id: self.user.id,
+      username: self.user.username
+    }
+  end
+
 end

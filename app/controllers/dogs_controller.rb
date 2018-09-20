@@ -10,7 +10,7 @@ class DogsController < ApplicationController
 
   # GET /dogs/1
   def show
-    render json: @dog
+    render json: @dog.formatted
   end
 
   # POST /dogs

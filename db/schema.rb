@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_214803) do
 
   create_table "dog_parks", force: :cascade do |t|
     t.string "name"
+    t.string "images"
     t.string "description"
     t.string "location"
     t.boolean "dog_run"
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_214803) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "name"
+    t.string "avatar"
     t.string "breed"
     t.text "bio"
     t.string "size"

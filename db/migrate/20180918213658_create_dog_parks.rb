@@ -2,6 +2,7 @@ class CreateDogParks < ActiveRecord::Migration[5.2]
   def change
     create_table :dog_parks do |t|
       t.string :name
+      t.string :images
       t.string :description
       t.string :location
       t.boolean :dog_run

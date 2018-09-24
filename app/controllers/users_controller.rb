@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    @newUsers = @users.each do |user|
+      user.formatted
+    end
+
+    render json: @newUsers
   end
 
   # GET /users/1
@@ -49,6 +53,6 @@ class UsersController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def user_params
       # params.fetch(:user, {})
-      params.require(:user).permit(:username, :password, :email, :location, :avatar, :display_name)
+      params.require(:user).permit(:username, :password, :password_confirmation, :bio, :email, :location, :avatar, :display_name)
     end
 end

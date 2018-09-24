@@ -1,8 +1,14 @@
 class User < ApplicationRecord
+
+  has_secure_password
+
   has_many :messages
   has_many :communities, through: :messages
   has_many :user_dogs
   has_many :dogs, through: :user_dogs
+
+  validates :username, presence: :true, uniqueness: :true
+  validates :password, presence: :true
 
   def formatted
     {

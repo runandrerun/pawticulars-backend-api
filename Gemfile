@@ -9,9 +9,11 @@ gem 'fast_jsonapi'
 gem 'bcrypt'
 
 gem 'jwt'
-
+gem 'rest-client'
+gem 'httparty'
 gem 'devise'
 gem 'doorkeeper'
+gem 'geocoder'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'

@@ -10,8 +10,8 @@ require 'dogparks'
 require 'geocoder'
 # require 'secret'
 
-User.create(username: 'runandre', password: '123', password_confirmation: '123', bio: "Bronx Native!", email: 'coolio@cool.com', location: 'Bronx, NY', avatar: 'img', display_name: 'dreday')
-Dog.create(name: 'Panda', avatar: 'img', breed: 'Mastiff x Catahoula Cur', bio: 'Beast!', size: 'Large', temperament: 'Confident', energy: 'High', gender: 'Male', age: '1.8')
+User.create(username: 'runandre', password: '123', password_confirmation: '123', bio: "Bronx Native!", email: 'coolio@cool.com', location: 'Bronx, NY', avatar: './andre.jpg', display_name: 'dreday')
+Dog.create(name: 'Panda', avatar: './panda.jpg', breed: 'Mastiff x Catahoula Cur', bio: 'Beast!', size: 'Large', temperament: 'Confident', energy: 'High', gender: 'Male', age: '1.8')
 UserDog.create(user_id: 1, dog_id: 1)
 
 

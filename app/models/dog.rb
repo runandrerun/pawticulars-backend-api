@@ -16,7 +16,8 @@ class Dog < ApplicationRecord
       energy: self.energy,
       gender: self.gender,
       age: self.age,
-      owner: self.formatted_owner
+      owner: self.formatted_owner,
+      parks: self.dog_parks
     }
   end
 
@@ -24,6 +25,12 @@ class Dog < ApplicationRecord
     {
       id: self.user.id,
       username: self.user.username
+    }
+  end
+
+  def formatted_dog_park
+    {
+      id: self.dog_parks.id
     }
   end
 

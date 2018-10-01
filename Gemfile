@@ -7,8 +7,9 @@ ruby '2.3.3'
 gem 'fast_jsonapi'
 # gem 'rack-cors'
 gem 'bcrypt'
-
 gem 'jwt'
+
+
 gem 'rest-client'
 gem 'httparty'
 gem 'devise'
@@ -21,6 +22,7 @@ gem 'rails', '~> 5.2.1'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -39,6 +41,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
+
+gem 'google_places', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

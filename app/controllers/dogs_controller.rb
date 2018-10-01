@@ -18,7 +18,7 @@ class DogsController < ApplicationController
     @dog = Dog.new(dog_params)
 
     if @dog.save
-      render json: @dog, status: :created, location: @dog
+      render json: @dog.formatted, status: :created, location: @dog
     else
       render json: @dog.errors, status: :unprocessable_entity
     end

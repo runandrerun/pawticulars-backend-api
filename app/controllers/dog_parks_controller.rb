@@ -10,7 +10,7 @@ class DogParksController < ApplicationController
 
   # GET /dog_parks/1
   def show
-    render json: @dog_park
+    render json: @dog_park.formatted
   end
 
   # POST /dog_parks
@@ -18,7 +18,7 @@ class DogParksController < ApplicationController
     @dog_park = DogPark.new(dog_park_params)
 
     if @dog_park.save
-      render json: @dog_park, status: :created, location: @dog_park
+      render json: @dog_park.formatted, status: :created, location: @dog_park
     else
       render json: @dog_park.errors, status: :unprocessable_entity
     end

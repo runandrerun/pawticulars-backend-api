@@ -17,7 +17,8 @@ class User < ApplicationRecord
       avatar: self.avatar,
       location: self.location,
       display_name: self.display_name,
-      dogs: self.dogs
+      dogs: self.dogs,
+      dog_parks: self.doggy_parks
     }
   end
 
@@ -29,4 +30,9 @@ class User < ApplicationRecord
  #                      :length => {:within => 6..40},
  #                      :allow_blank => true,
  #                      :on => :update
+  def doggy_parks
+    self.dogs.map do |dog|
+      dog.dog_parks
+    end
+  end
 end

@@ -1009,8 +1009,8 @@
  },
  {
    "Prop_ID": "R070",
-   "Name": "Clove’s Tail Park",
-   "Address": "Lawn area, corner of Victory Boulevard & Little Clove Road\n",
+   "Name": "Clove's Tail Park",
+   "Address": "Lawn area, corner of Victory Boulevard & Little Clove Road",
    "DogRuns_Type": "Off-Leash",
    "Accessible": "N",
    "Notes": "none",

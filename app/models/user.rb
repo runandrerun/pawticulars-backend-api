@@ -1,10 +1,16 @@
 class User < ApplicationRecord
-
+  # has_friendship
+  popular
+  # acts_as_friend
   has_secure_password
-  has_many :friend_requests, dependent: :destroy
-  has_many :pending_friends, through: :friend_requests, source: :friend
-  has_many :friendships, dependent: :destroy
-  has_many :friends, through: :friendships
+
+  # after_befriend 'notify_friendship_created value'
+  # after_unfriend 'notify_unfriended value'
+  # popular
+  # has_many :friend_requests, dependent: :destroy
+  # has_many :pending_friends, through: :friend_requests, source: :friend
+  # has_many :friendships, dependent: :destroy
+  # has_many :friends, through: :friendships
   has_many :messages
   has_many :communities, through: :messages
   has_many :user_dogs
@@ -24,8 +30,15 @@ class User < ApplicationRecord
       dogs: self.all_dogs,
       dog_parks: self.doggy_parks,
       messages: formatted_messages,
-      communities: formatted_communities
+      communities: formatted_communities,
+      all_friends: find_friends
     }
+  end
+
+  def find_friends
+    self.friendships.map do |friend|
+      User.find(friend.friend_id)
+    end
   end
 
  #  validates :password, :presence => true,
@@ -64,7 +77,16 @@ class User < ApplicationRecord
     end
   end
 
-  def remove_friend(friend)
-    current_user.friends.destroy(friend)
-  end
+  # def notify_friendship_created(friendship)
+  #   puts "#{name} friended #{friendship.friend.name}"
+  # end
+  #
+  # def notify_unfriended(friendship)
+  #   puts "#{name} unfriended #{friendship.friend.name}"
+  # end
+
+
+  # def remove_friend(friend)
+  #   current_user.friends.destroy(friend)
+  # end
 end

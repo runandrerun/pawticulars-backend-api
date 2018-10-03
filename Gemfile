@@ -9,6 +9,9 @@ gem 'fast_jsonapi'
 gem 'bcrypt'
 gem 'jwt'
 
+gem 'popular'
+
+gem 'amistad'
 
 gem 'rest-client'
 gem 'httparty'

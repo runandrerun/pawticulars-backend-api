@@ -10,7 +10,7 @@ class CommunitiesController < ApplicationController
 
   # GET /communities/1
   def show
-    render json: @community
+    render json: @community.formatted
   end
 
   # POST /communities

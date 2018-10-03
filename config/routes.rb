@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friend_requests
   resources :inboxes
   resources :private_messages
   resources :friends

@@ -16,7 +16,22 @@ class DogPark < ApplicationRecord
       accessibility: self.accessibility,
       lat: self.lat,
       lng: self.lng,
-      dogs: self.dogs
+      dogs: self.dogs,
+      community: self.formatted_comms,
+      messages: all_messages
     }
   end
+
+  def formatted_comms
+    self.communities.map do |comm|
+      comm.formatted
+    end
+  end
+
+  def all_messages
+    self.communities.map do |comm|
+      comm.messages
+    end
+  end
+
 end

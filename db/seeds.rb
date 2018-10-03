@@ -27,7 +27,11 @@
 #   DogPark.create(name: park[:Name], location: format_address, images: photo, description: park[:Address], dog_run: park[:DogRuns_Type] == 'Run' ? true : false, off_leash: park[:DogRuns_Type] == 'Off-Leash' ? true : false, accessibility: park[:Accessible], lat: lat_res, lng: lng_res)
 # end
 
-seedData
+
+
+
+
+
 
 # url = 'https://maps.googleapis.com/maps/api/geocode/json?address=St+Marys+Dog+Park+NY&key=AIzaSyDe-msCH_NN1woQafqFRngQLZrGOQ5xeCE'
 #

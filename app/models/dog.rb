@@ -1,4 +1,5 @@
 class Dog < ApplicationRecord
+  popular
   has_many :dog_communities
   has_many :dog_parks, through: :dog_communities
   has_one :user_dog
@@ -17,7 +18,8 @@ class Dog < ApplicationRecord
       gender: self.gender,
       age: self.age,
       owner: self.formatted_owner,
-      parks: self.dog_parks
+      parks: self.dog_parks,
+      matches: self.find_matches
     }
   end
 
@@ -33,5 +35,12 @@ class Dog < ApplicationRecord
       id: self.dog_parks.id
     }
   end
+
+  def find_matches
+    self.friendships.map do |match|
+      Dog.find(match.friend_id)
+    end
+  end
+
 
 end
